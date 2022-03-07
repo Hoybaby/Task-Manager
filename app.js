@@ -12,7 +12,7 @@ app.use(express.json());
 // routes
 
 // this is must to use routes. Need to make sure to get middleware from express 
-app.use('/api/vi/tasks', tasks);
+app.use('/api/v1/tasks', tasks);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}...`);

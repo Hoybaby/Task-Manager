@@ -5,17 +5,15 @@ const getAllTasks = (req, res) => {
 }
 
 const createTask = (req, res) => {
-    res.send('create a new task');
+    res.json(req.body);
 }
 
+// this makes so in postman, the key will display id because of the name of the key and then call the value of the ID which it knows in the tasks.js in routes
 const getTask = (req, res) => {
-    res.send('create a new task');
+    res.json({id: req.params.id});
 }
 
-const getSingleTask = (req, res) => {
-    res.send('get a single task');
-}
-const updatingTask = (req, res) => {
+const updateTask = (req, res) => {
     res.send('update task');
 }
 
@@ -24,5 +22,5 @@ const deleteTask = (req, res) => {
 }
 
 module.exports = {
-    getAllTasks, createTask, getTask, getSingleTask, updatingTask, deleteTask 
+    getAllTasks, createTask, getTask, updateTask, deleteTask 
 }

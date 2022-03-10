@@ -5,6 +5,6 @@ const connectionString = `mongodb+srv://hoybaby:Welcome0@firstcluster.b4kva.mong
 
 
 mongoose
-.connect(connectionString)
-.then(() => console.log('Connected to database'))
+.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true})
+.then(() => console.log('Connected to database...'))
 .catch(err => console.log(err));

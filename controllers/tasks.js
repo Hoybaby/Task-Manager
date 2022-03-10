@@ -1,11 +1,14 @@
 
+const Task = require('../models/Task');
 
 const getAllTasks = (req, res) => {
     res.send('get all tasks');
 }
 
-const createTask = (req, res) => {
-    res.json(req.body);
+// the create task will be async
+const createTask = async (req, res) => {
+    const task = await Task.create(req.body);
+    res.status(201).json({task});
 }
 
 // this makes so in postman, the key will display id because of the name of the key and then call the value of the ID which it knows in the tasks.js in routes

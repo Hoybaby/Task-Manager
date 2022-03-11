@@ -4,7 +4,16 @@ const mongoose = require('mongoose');
 
 // this will setup the structure of the task in database        
 const TaskSchema = new mongoose.Schema({
-    name: String, completed: Boolean
+    name: {
+        type: String, 
+        required: [true, 'Task name is required'],
+        trim: true,
+        maxlength: [20, 'Task name cannot be more than 20 characters'],
+    }, 
+    completed: {
+        type: Boolean,
+        default: false,
+    }
 
 })
 
